@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Valentine's Day ❤️</title>
+
+<style>
+body{
+    margin:0;
+    overflow:hidden;
+    background:black;
+    font-family:Arial;
+    text-align:center;
+    color:#ff4e7a;
+}
+
+h1{
+    margin-top:120px;
+    font-size:50px;
+}
+
+button{
+    padding:15px 35px;
+    font-size:22px;
+    border:none;
+    border-radius:40px;
+    background:#ff4e7a;
+    color:white;
+    cursor:pointer;
+    margin-top:30px;
+}
+
+.heart{
+    position:absolute;
+    color:red;
+    font-size:20px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float{
+    from{ transform:translateY(100vh);}
+    to{ transform:translateY(-10vh);}
+}
+
+#message{
+    display:none;
+    font-size:28px;
+    margin-top:40px;
+    padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Happy Valentine's Day My Chella Paya ❤️</h1>
+
+<button onclick="showMessage()">Open Gift 🎁</button>
+
+<div id="message">
+    You are the best thing that happened in my life 💖<br><br>
+    Thank you for loving me, caring me and staying with me 💑<br><br>
+    I love you forever ❤️
+</div>
+
+<script>
+function showMessage(){
+    document.getElementById("message").style.display="block";
+}
+
+// hearts animation
+setInterval(function(){
+    var heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=Math.random()*30+20+"px";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>heart.remove(),6000);
+},300);
+</script>
+
+</body>
+</html>
